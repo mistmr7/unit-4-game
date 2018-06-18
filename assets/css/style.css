@@ -1,0 +1,23 @@
+body {
+    background-image: url('https://i1.wp.com/thefreshimages.com/wp-content/uploads/2018/02/Star-Wars-Background-HD.jpg?resize=1600%2C954&ssl=1');
+    background-size: cover;
+}
+
+.swCard {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.swTitle, .swWords, .swCard {
+    font-family: 'Poller One', cursive;
+}
+
+.swTitle {
+    font-size: 50px;
+}
+
+#swEnemy1 {
+    z-index: 2;
+}

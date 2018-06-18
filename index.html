@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poller+One" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+  <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6"></div>
+                <div class="col-lg-6 swTitle">Star Wars RPG!</div>
+            </div>
+            <div class="row row1">
+                <div class="card swCard text-center" id="swChewbacca">Chewbacca<img src="assets/images/Chewbacca.png" alt="Chewbacca">150</div>
+                <div class="card swCard text-center" id="swAckbar">Admiral Ackbar<img src="assets/images/Admiral Ackbar.jpg" alt="Admiral Ackbar">125</div>
+                <div class="card swCard text-center" id="swHanSolo">Han Solo<img src="assets/images/Han Solo.jpg" alt="Han Solo">200</div>
+                <div class="card swCard text-center" id="swStormTrooper">Storm Trooper<img src="assets/images/storm trooper.jpg" alt="Storm Trooper">175</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 swWords">Your Character</div>
+            </div>
+            <div class="row">
+                <div class="swCard" id="swCharacter"></div>
+                
+            </div>
+            <div class="row">
+                <div class="col-lg-12 swWords">Enemies to Battle</div>                
+            </div>
+            <div class="row">
+                <div class= "swCard" id="swEnemy1"></div>
+                <div class="swCard" id="swEnemy2"></div>
+                <div class="swCard" id="swEnemy3"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 swWords">Fight Section</div>                    
+            </div>
+            <div class="row">
+                <button type="button" class="btn-secondary" style="margin-left: 20px">Attack</button>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 swWords">Defender</div>
+            </div>
+            <div class="row">
+                <div class="swCard" id="swDefender"></div>
+                
+            </div>
+            <div class="row">
+                <div class="col-lg-12 swWords"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 swWords"></div>
+            </div>
+        </div>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="assets/javascript/game.js"></script>
+    <script>
+    $(document).ready(function() {
+        var swChewbacca = $("#swChewbacca");
+        var swHanSolo = $("#swHanSolo");
+        var swAckbar = $("#swAckbar");
+        var swStormTrooper = $("#swStormTrooper");
+        
+        //Choose a character
+        $("#swChewbacca").on("click", function() {
+            swChewbacca.appendTo("#swCharacter").attr("id", "#swChewbaccaCharacter");
+            swHanSolo.appendTo("#swEnemy1").attr("id", "#swHanSoloEnemy");
+            swAckbar.appendTo("#swEnemy2").attr("id", "#swAckbarEnemy");
+            swStormTrooper.appendTo("#swEnemy3").attr("id", "#swStormTrooperEnemy");
+        })
+
+        $("#swHanSolo").on("click", function() {
+            swHanSolo.appendTo("#swCharacter").attr("id", "#swHanSoloCharacter");
+            swChewbacca.appendTo("#swEnemy1").attr("id", "#swChewbaccaEnemy");
+            swAckbar.appendTo("#swEnemy2").attr("id", "#swAckbarEnemy");
+            swStormTrooper.appendTo("#swEnemy3").attr("id", "#swStormTrooperEnemy");
+        })
+        $("#swAckbar").on("click", function() {
+            swAckbar.appendTo("#swCharacter").attr("id", "#swAckbarCharacter");
+            swHanSolo.appendTo("#swEnemy1").attr("id", "#swHanSoloEnemy");
+            swChewbacca.appendTo("#swEnemy2").attr("id", "#swChewbaccaEnemy");
+            swStormTrooper.appendTo("#swEnemy3").attr("id", "#swStormTrooperEnemy");
+        })
+        $("#swStormTrooper").on("click", function() {
+            swStormTrooper.appendTo("#swCharacter").attr("id", "#swStormTrooperCharacter");
+            swHanSolo.appendTo("#swEnemy1").attr("id", "#swHanSoloEnemy");
+            swAckbar.appendTo("#swEnemy2").attr("id", "#swAckbarEnemy");
+            swChewbacca.appendTo("#swEnemy3").attr("id", "#swChewbaccaEnemy");
+        })
+        
+        var swChewbaccaCharacter = $("#swChewbaccaCharacter");
+        var swHanSoloCharacter = $("#swHanSoloCharacter");
+        var swStormTrooperCharacter = $("#swStormTrooperCharacter");
+        var swAckbarCharacter = $("#swAckbarCharacter");
+        var swHansoloEnemy = $("#swHanSoloEnemy");
+        var swAckbarEnemy = $("#swAckbarEnemy");
+        var swStormTrooperEnemy = $("#swStormTrooperEnemy");
+        var swChewbaccaEnemy = $("#swChewbaccaEnemy");
+        //Choose an enemy to battle
+        
+        $("#swHanSoloEnemy").on("click", function(){
+            swHansoloEnemy.appendTo("#swDefender");
+        })
+        $("#swChewbaccaEnemy").on("click", function(){
+            swChewbaccaEnemy.appendTo("#swDefender");
+        })
+        $("#swStormTrooperEnemy").on("click", function(){
+            swStormTrooperEnemy.appendTo("#swDefender");
+        })
+        $("#swAckbarEnemy").on("click", function(){
+            swAckbarEnemy.appendTo("#swDefender");
+        })
+
+    })
+    
+    </script>
+    
+</body>
+</html>
