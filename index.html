@@ -12,50 +12,61 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
   <body>
-        <div class="container">
+        <div class= "container">
+            <div class="gameOver swWords" style="display: none">Ouch, that had to hurt. Want to try again?<button type="button" onclick="window.location.reload();">Restart Game!</button></div>
+        </div>
+        <div class="container swWords youWin" style="font-size: 30px; display: none">You win the game! Select a new character and try again!  <button type="button" onclick="window.location.reload();" style="font-size: 15px;">Restart Game!</button></div>    
+        
+        <div class="container container1" style="display: inherit">
             <div class="row">
                 <div class="col-lg-6"></div>
                 <div class="col-lg-6 swTitle">Star Wars RPG!</div>
             </div>
-            <div class="row row1">
-                <div class="card swCard text-center" id="swChewbacca">Chewbacca<img src="assets/images/Chewbacca.png" alt="Chewbacca">150</div>
-                <div class="card swCard text-center" id="swAckbar">Admiral Ackbar<img src="assets/images/Admiral Ackbar.jpg" alt="Admiral Ackbar">125</div>
-                <div class="card swCard text-center" id="swHanSolo">Han Solo<img src="assets/images/Han Solo.jpg" alt="Han Solo">200</div>
-                <div class="card swCard text-center" id="swStormTrooper">Storm Trooper<img src="assets/images/storm trooper.jpg" alt="Storm Trooper">175</div>
+            <div class="row selectCharacter">
+                <div class="card swCard text-center character" id="swChewbacca">Chewbacca<img src="assets/images/Chewbacca.png" alt="Chewbacca"><span class="chewbaccaHP" value="150">150</span></div>
+                <div class="card swCard text-center character" id="swAckbar">Admiral Ackbar<img src="assets/images/Admiral Ackbar.jpg" alt="Admiral Ackbar"><span class="ackbarHP" value="175">175</span></div>
+                <div class="card swCard text-center character" id="swHanSolo">Han Solo<img src="assets/images/Han Solo.jpg" alt="Han Solo"><span class="hanHP" value="200">200</span></div>
+                <div class="card swCard text-center character" id="swStormTrooper">Storm Trooper<img src="assets/images/storm trooper.jpg" alt="Storm Trooper"><span class="stormHP" value="125">125</span></div>
             </div>
             <div class="row">
                 <div class="col-lg-12 swWords">Your Character</div>
             </div>
-            <div class="row">
-                <div class="swCard" id="swCharacter"></div>
-                
+            <div class="row swCharacter">
+                <div class="card swCard text-center character" id="swChewbaccaCharacter" style="display: none">Chewbacca<img src="assets/images/Chewbacca.png" alt="Chewbacca"><span class="chewbaccaHP" value="150">150</span></div>
+                <div class="card swCard text-center character" id="swAckbarCharacter" style="display: none">Admiral Ackbar<img src="assets/images/Admiral Ackbar.jpg" alt="Admiral Ackbar"><span class="ackbarHP" value="175">175</span></div>
+                <div class="card swCard text-center character" id="swHanSoloCharacter" style="display: none">Han Solo<img src="assets/images/Han Solo.jpg" alt="Han Solo"><span class="hanHP" value="200">200</span></div>
+                <div class="card swCard text-center character" id="swStormTrooperCharacter" style="display: none">Storm Trooper<img src="assets/images/storm trooper.jpg" alt="Storm Trooper"><span class="stormHP" value="125">125</span></div>                
             </div>
             <div class="row">
                 <div class="col-lg-12 swWords">Enemies to Battle</div>                
             </div>
-            <div class="row">
-                <div class= "swCard" id="swEnemy1"></div>
-                <div class="swCard" id="swEnemy2"></div>
-                <div class="swCard" id="swEnemy3"></div>
+            <div class="row yourEnemies">
+                <div class="card swCard text-center character" id="swChewbaccaEnemy" style="display: none">Chewbacca<img src="assets/images/Chewbacca.png" alt="Chewbacca"><span class="chewbaccaHP" value="150">150</span></div>
+                <div class="card swCard text-center character" id="swAckbarEnemy" style="display: none">Admiral Ackbar<img src="assets/images/Admiral Ackbar.jpg" alt="Admiral Ackbar"><span id="ackbarHP" value="175">175</span></div>
+                <div class="card swCard text-center character" id="swHanSoloEnemy" style="display: none">Han Solo<img src="assets/images/Han Solo.jpg" alt="Han Solo"><span class="hanHP" value="200">200</span></div>
+                <div class="card swCard text-center character" id="swStormTrooperEnemy" style="display: none">Storm Trooper<img src="assets/images/storm trooper.jpg" alt="Storm Trooper"><span class="stormHP" value="125">125</span></div>
             </div>
             <div class="row">
                 <div class="col-lg-12 swWords">Fight Section</div>                    
             </div>
             <div class="row">
-                <button type="button" class="btn-secondary" style="margin-left: 20px">Attack</button>
+                <button type="button" class="btn-secondary" id="attackButton" style="margin-left: 20px; display: none">Attack</button>
             </div>
             <div class="row">
                 <div class="col-lg-12 swWords">Defender</div>
             </div>
-            <div class="row">
-                <div class="swCard" id="swDefender"></div>
-                
+            <div class="row yourDefender">
+                <div class="card swCard text-center character" id="swChewbaccaDefender" style="display: none">Chewbacca<img src="assets/images/Chewbacca.png" alt="Chewbacca"><span class="chewbaccaHP" value="150">150</span></div>
+                <div class="card swCard text-center character" id="swAckbarDefender" style="display: none">Admiral Ackbar<img src="assets/images/Admiral Ackbar.jpg" alt="Admiral Ackbar"><span class="ackbarHP" value="175">175</span></div>
+                <div class="card swCard text-center character" id="swHanSoloDefender" style="display: none">Han Solo<img src="assets/images/Han Solo.jpg" alt="Han Solo"><span class="hanHP" value="200">200</span></div>
+                <div class="card swCard text-center character" id="swStormTrooperDefender" style="display: none">Storm Trooper<img src="assets/images/storm trooper.jpg" alt="Storm Trooper"><span class="stormHP" value="125">125</span></div>
+                <div class="swCard" class="swDefender"></div>                
             </div>
             <div class="row">
-                <div class="col-lg-12 swWords"></div>
+                <div class="col-lg-12 swWords" id="swAttack"></div>
             </div>
             <div class="row">
-                <div class="col-lg-12 swWords"></div>
+                <div class="col-lg-12 swWords" id="swCounterAttack"></div>
             </div>
         </div>
       
@@ -71,56 +82,555 @@
         var swHanSolo = $("#swHanSolo");
         var swAckbar = $("#swAckbar");
         var swStormTrooper = $("#swStormTrooper");
-        
-        //Choose a character
-        $("#swChewbacca").on("click", function() {
-            swChewbacca.appendTo("#swCharacter").attr("id", "#swChewbaccaCharacter");
-            swHanSolo.appendTo("#swEnemy1").attr("id", "#swHanSoloEnemy");
-            swAckbar.appendTo("#swEnemy2").attr("id", "#swAckbarEnemy");
-            swStormTrooper.appendTo("#swEnemy3").attr("id", "#swStormTrooperEnemy");
-        })
-
-        $("#swHanSolo").on("click", function() {
-            swHanSolo.appendTo("#swCharacter").attr("id", "#swHanSoloCharacter");
-            swChewbacca.appendTo("#swEnemy1").attr("id", "#swChewbaccaEnemy");
-            swAckbar.appendTo("#swEnemy2").attr("id", "#swAckbarEnemy");
-            swStormTrooper.appendTo("#swEnemy3").attr("id", "#swStormTrooperEnemy");
-        })
-        $("#swAckbar").on("click", function() {
-            swAckbar.appendTo("#swCharacter").attr("id", "#swAckbarCharacter");
-            swHanSolo.appendTo("#swEnemy1").attr("id", "#swHanSoloEnemy");
-            swChewbacca.appendTo("#swEnemy2").attr("id", "#swChewbaccaEnemy");
-            swStormTrooper.appendTo("#swEnemy3").attr("id", "#swStormTrooperEnemy");
-        })
-        $("#swStormTrooper").on("click", function() {
-            swStormTrooper.appendTo("#swCharacter").attr("id", "#swStormTrooperCharacter");
-            swHanSolo.appendTo("#swEnemy1").attr("id", "#swHanSoloEnemy");
-            swAckbar.appendTo("#swEnemy2").attr("id", "#swAckbarEnemy");
-            swChewbacca.appendTo("#swEnemy3").attr("id", "#swChewbaccaEnemy");
-        })
-        
         var swChewbaccaCharacter = $("#swChewbaccaCharacter");
         var swHanSoloCharacter = $("#swHanSoloCharacter");
-        var swStormTrooperCharacter = $("#swStormTrooperCharacter");
         var swAckbarCharacter = $("#swAckbarCharacter");
-        var swHansoloEnemy = $("#swHanSoloEnemy");
+        var swStormTrooperCharacter = $("#swStormTrooperCharacter");
+        var swChewbaccaEnemy = $("#swChewbaccaEnemy");
+        var swHanSoloEnemy = $("#swHanSoloEnemy");
         var swAckbarEnemy = $("#swAckbarEnemy");
         var swStormTrooperEnemy = $("#swStormTrooperEnemy");
-        var swChewbaccaEnemy = $("#swChewbaccaEnemy");
-        //Choose an enemy to battle
+        var swChewbaccaDefender = $("#swChewbaccaDefender");
+        var swHanSoloDefender = $("#swHanSoloDefender");
+        var swAckbarDefender = $("#swAckbarDefender");
+        var swStormTrooperDefender = $("#swStormTrooperDefender");
+        var attackButton = $("#attackButton");
+        var swAttack = $("#swAttack");
+        var swCounterAttack = $("#swCounterAttack");
+        var stormTrooperDefense = false;
+        var hanSoloDefense = false;
+        var ackbarDefense = false;
+        var chewbaccaDefense = false;
+        var stormTrooperCharacter = false;
+        var hanSoloCharacter = false;
+        var ackbarCharacter = false;
+        var chewbaccaCharacter = false;
+        var attackDamage = 0;
+        var counterAttackDamage = 0;
+        var swAttack = $("#swAttack");
+        var swCounterAttack = $("#swCounterAttack");
+        var chewbaccaHP = $(".chewbaccaHP").attr("value");
+        var ackbarHP = $(".ackbarHP").attr("value");
+        var stormHP = $(".stormHP").attr("value");
+        var hanHP = $(".hanHP").attr("value");
+        var gameOver = $(".gameOver button");
         
-        $("#swHanSoloEnemy").on("click", function(){
-            swHansoloEnemy.appendTo("#swDefender");
+
+        $("#swChewbacca").on("click", function(){
+            swChewbacca.css("display", "none");
+            swChewbaccaCharacter.css("display", "inherit");
+            swHanSolo.css("display", "none");
+            swAckbar.css("display", "none");
+            swStormTrooper.css("display", "none");
+            swHanSoloEnemy.css("display", "inherit");
+            swAckbarEnemy.css("display", "inherit");
+            swStormTrooperEnemy.css("display", "inherit");
+            chewbaccaCharacter = true;
         })
+        
+        $("#swHanSolo").on("click", function(){
+            swChewbacca.css("display", "none");
+            swHanSoloCharacter.css("display", "inherit");
+            swHanSolo.css("display", "none");
+            swAckbar.css("display", "none");
+            swStormTrooper.css("display", "none");
+            swChewbaccaEnemy.css("display", "inherit");
+            swAckbarEnemy.css("display", "inherit");
+            swStormTrooperEnemy.css("display", "inherit");
+            hanSoloCharacter = true;
+        })
+
+        $("#swAckbar").on("click", function(){
+            swChewbacca.css("display", "none");
+            swAckbarCharacter.css("display", "inherit");
+            swHanSolo.css("display", "none");
+            swAckbar.css("display", "none");
+            swStormTrooper.css("display", "none");
+            swHanSoloEnemy.css("display", "inherit");
+            swChewbaccaEnemy.css("display", "inherit");
+            swStormTrooperEnemy.css("display", "inherit");
+            ackbarCharacter = true;
+        })
+
+        $("#swStormTrooper").on("click", function(){
+            swChewbacca.css("display", "none");
+            swStormTrooperCharacter.css("display", "inherit");
+            swHanSolo.css("display", "none");
+            swAckbar.css("display", "none");
+            swStormTrooper.css("display", "none");
+            swHanSoloEnemy.css("display", "inherit");
+            swAckbarEnemy.css("display", "inherit");
+            swChewbaccaEnemy.css("display", "inherit");
+            stormTrooperCharacter = true;
+        })
+
         $("#swChewbaccaEnemy").on("click", function(){
-            swChewbaccaEnemy.appendTo("#swDefender");
+            swChewbaccaEnemy.css("display", "none");
+            swChewbaccaDefender.css("display", "inherit");
+            attackButton.css("display","block");
+            swAckbarEnemy.css("pointer-events", "none");
+            swHanSoloEnemy.css("pointer-events", "none");
+            swStormTrooperEnemy.css("pointer-events", "none");
+            chewbaccaDefense = true;
         })
+
+        $("#swHanSoloEnemy").on("click", function(){ 
+            swHanSoloDefender.css("display", "inherit");
+            swHanSoloEnemy.css("display", "none");
+            attackButton.css("display","block");
+            swAckbarEnemy.css("pointer-events", "none");
+            swChewbaccaEnemy.css("pointer-events", "none");
+            swStormTrooperEnemy.css("pointer-events", "none");
+            hanSoloDefense = true;
+        })
+
         $("#swStormTrooperEnemy").on("click", function(){
-            swStormTrooperEnemy.appendTo("#swDefender");
+            swStormTrooperDefender.css("display", "inherit");
+            swStormTrooperEnemy.css("display", "none");
+            attackButton.css("display","block");
+            swAckbarEnemy.css("pointer-events", "none");
+            swHanSoloEnemy.css("pointer-events", "none");
+            swChewbaccaEnemy.css("pointer-events", "none");
+            stormTrooperDefense = true;
         })
+
         $("#swAckbarEnemy").on("click", function(){
-            swAckbarEnemy.appendTo("#swDefender");
+            swAckbarDefender.css("display", "inherit");
+            swAckbarEnemy.css("display", "none");
+            attackButton.css("display","block");
+            swChewbaccaEnemy.css("pointer-events", "none");
+            swHanSoloEnemy.css("pointer-events", "none");
+            swStormTrooperEnemy.css("pointer-events", "none");
+            ackbarDefense = true;
+        })    
+
+        
+        attackButton.on("click", function(){
+            if (chewbaccaCharacter === true && ackbarDefense === true) {
+                result = attackDamage + 12;
+                attackDamage = result;
+                counterAttackDamage = 15;
+                swAttack.text("Your attack yields " + attackDamage + " damage!")
+                swCounterAttack.text("You have been hit with a counter attack for " + counterAttackDamage + " damage!")
+                newChewbaccaHP = chewbaccaHP - counterAttackDamage;
+                chewbaccaHP = newChewbaccaHP;
+                newAckbarHP = ackbarHP - attackDamage;
+                ackbarHP = newAckbarHP;
+                $('.swCharacter .chewbaccaHP').html(chewbaccaHP);
+                $('.yourDefender .ackbarHP').html(ackbarHP);
+                
+                if (chewbaccaHP > 0 && hanHP <= 0 && stormHP <= 0 && ackbarHP <= 0) {
+                    $(".youWin").css("display", "block");
+                    $(".container1").css("display", "none");
+                }
+                else if (ackbarHP <= 0 && chewbaccaHP > 0) {
+                    swAckbarEnemy.css("pointer-events", "auto");
+                    swHanSoloEnemy.css("pointer-events", "auto");
+                    swStormTrooperEnemy.css("pointer-events", "auto");
+                    ackbarDefense = false;
+                    swAckbarDefender.css("display", "none");
+                }
+                else if (chewbaccaHP <= 0) {
+                    $(".container1").css("display", "none");
+                    $(".gameOver").css("display", "block");
+                }
+            }
+
+           else if (chewbaccaCharacter === true && hanSoloDefense === true) {
+                result = attackDamage + 12;
+                attackDamage = result;
+                counterAttackDamage = 10;
+                swAttack.text("Your attack yields " + attackDamage + " damage!")
+                swCounterAttack.text("You have been hit with a counter attack for " + counterAttackDamage + " damage!")
+                newChewbaccaHP = chewbaccaHP - counterAttackDamage;
+                chewbaccaHP = newChewbaccaHP;
+                newHanHP = hanHP - attackDamage;
+                hanHP = newHanHP;
+                $('.swCharacter .chewbaccaHP').html(chewbaccaHP);
+                $('.yourDefender .hanHP').html(hanHP);
+                
+                if (chewbaccaHP > 0 && hanHP <= 0 && stormHP <= 0 && ackbarHP <= 0) {
+                    $(".youWin").css("display", "block");
+                    $(".container1").css("display", "none");
+                }
+                else if (hanHP <= 0 && chewbaccaHP > 0) {
+                    swAckbarEnemy.css("pointer-events", "auto");
+                    swHanSoloEnemy.css("pointer-events", "auto");
+                    swStormTrooperEnemy.css("pointer-events", "auto");
+                    hanSoloDefense = false;
+                    swHanSoloDefender.css("display", "none");
+                }
+                else if (chewbaccaHP <= 0) {
+                    $(".container1").css("display", "none");
+                    $(".gameOver").css("display", "block");
+                }
+           }
+
+           else if (chewbaccaCharacter === true && stormTrooperDefense === true) {
+                result = attackDamage + 12;
+                attackDamage = result;
+                counterAttackDamage = 25;
+                swAttack.text("Your attack yields " + attackDamage + " damage!")
+                swCounterAttack.text("You have been hit with a counter attack for " + counterAttackDamage + " damage!")
+                newChewbaccaHP = chewbaccaHP - counterAttackDamage;
+                chewbaccaHP = newChewbaccaHP;
+                newStormHP = stormHP - attackDamage;
+                stormHP = newStormHP;
+                $('.swCharacter .chewbaccaHP').html(chewbaccaHP);
+                $('.yourDefender .stormHP').html(stormHP);
+                
+                if (chewbaccaHP > 0 && hanHP <= 0 && stormHP <= 0 && ackbarHP <= 0) {
+                    $(".youWin").css("display", "block");
+                    $(".container1").css("display", "none");
+                }                
+                else if (stormHP <= 0 && chewbaccaHP > 0) {
+                    swAckbarEnemy.css("pointer-events", "auto");
+                    swHanSoloEnemy.css("pointer-events", "auto");
+                    swStormTrooperEnemy.css("pointer-events", "auto");
+                    stormTrooperDefense = false;
+                    swStormTrooperDefender.css("display", "none");
+                }
+                else if (chewbaccaHP <= 0) {
+                    $(".container1").css("display", "none");
+                    $(".gameOver").css("display", "block");
+                }              
+           }
+
+           else if (hanSoloCharacter === true && ackbarDefense === true) {
+                result = attackDamage + 8;
+                attackDamage = result;
+                counterAttackDamage = 15;
+                swAttack.text("Your attack yields " + attackDamage + " damage!")
+                swCounterAttack.text("You have been hit with a counter attack for " + counterAttackDamage + " damage!")
+                newHanHP = hanHP - counterAttackDamage;
+                hanHP = newHanHP;
+                newAckbarHP = ackbarHP - attackDamage;
+                ackbarHP = newAckbarHP;
+                $('.swCharacter .hanHP').html(hanHP);
+                $('.yourDefender .ackbarHP').html(ackbarHP);
+                
+                if (hanHP > 0 && chewbaccaHP <= 0 && stormHP <= 0 && ackbarHP <= 0) {
+                    $(".youWin").css("display", "block");
+                    $(".container1").css("display", "none");
+                }
+                else if (ackbarHP <= 0 && hanHP > 0) {
+                    swAckbarEnemy.css("pointer-events", "auto");
+                    swChewbaccaEnemy.css("pointer-events", "auto");
+                    swStormTrooperEnemy.css("pointer-events", "auto");
+                    ackbarDefense = false;
+                    swAckbarDefender.css("display", "none");
+                }
+                else if (hanHP <= 0) {
+                    $(".container1").css("display", "none");
+                    $(".gameOver").css("display", "block");
+                }
+                
+           }
+
+           else if (hanSoloCharacter === true && chewbaccaDefense === true) {
+                result = attackDamage + 8;
+                attackDamage = result;
+                counterAttackDamage = 20;
+                swAttack.text("Your attack yields " + attackDamage + " damage!")
+                swCounterAttack.text("You have been hit with a counter attack for " + counterAttackDamage + " damage!")
+                newHanHP = hanHP - counterAttackDamage;
+                hanHP = newHanHP;
+                newChewbaccaHP = chewbaccaHP - attackDamage;
+                chewbaccaHP = newChewbaccaHP;
+                $('.swCharacter .hanHP').html(hanHP);
+                $('.yourDefender .chewbaccaHP').html(chewbaccaHP);
+                
+                if (hanHP > 0 && chewbaccaHP <= 0 && stormHP <= 0 && ackbarHP <= 0) {
+                    $(".youWin").css("display", "block");
+                    $(".container1").css("display", "none");
+                }
+                else if (chewbaccaHP <= 0 && hanHP > 0) {
+                    swAckbarEnemy.css("pointer-events", "auto");
+                    swChewbaccaEnemy.css("pointer-events", "auto");
+                    swStormTrooperEnemy.css("pointer-events", "auto");
+                    chewbaccaDefense = false;
+                    swChewbaccaDefender.css("display", "none");
+                }
+                else if (hanHP <= 0) {
+                    $(".container1").css("display", "none");
+                    $(".gameOver").css("display", "inherit");
+                }
+           }
+
+           else if (hanSoloCharacter === true && stormTrooperDefense === true) {
+                result = attackDamage + 8;
+                attackDamage = result;
+                counterAttackDamage = 25;
+                swAttack.text("Your attack yields " + attackDamage + " damage!")
+                swCounterAttack.text("You have been hit with a counter attack for " + counterAttackDamage + " damage!")
+                newHanHP = hanHP - counterAttackDamage;
+                hanHP = newHanHP;
+                newStormHP = stormHP - attackDamage;
+                stormHP = newStormHP;
+                $('.swCharacter .hanHP').html(hanHP);
+                $('.yourDefender .stormHP').html(stormHP);
+                
+                if (hanHP > 0 && chewbaccaHP <= 0 && stormHP <= 0 && ackbarHP <= 0) {
+                    $(".youWin").css("display", "block");
+                    $(".container1").css("display", "none");
+                }
+                else if (stormHP <= 0 && hanHP > 0) {
+                    swAckbarEnemy.css("pointer-events", "auto");
+                    swChewbaccaEnemy.css("pointer-events", "auto");
+                    swStormTrooperEnemy.css("pointer-events", "auto");
+                    stormTrooperDefense = false;
+                    swStormTrooperDefender.css("display", "none");
+                }
+                else if (hanHP <= 0) {
+                    $(".container1").css("display", "none");
+                    $(".gameOver").css("display", "block");
+                }
+           }
+
+           else if (stormTrooperCharacter === true && ackbarDefense === true) {
+                result = attackDamage + 15;
+                attackDamage = result;
+                counterAttackDamage = 15;
+                swAttack.text("Your attack yields " + attackDamage + " damage!")
+                swCounterAttack.text("You have been hit with a counter attack for " + counterAttackDamage + " damage!")
+                newStormHP = stormHP - counterAttackDamage;
+                stormHP = newStormHP;
+                newAckbarHP = ackbarHP - attackDamage;
+                ackbarHP = newAckbarHP;
+                $('.swCharacter .stormHP').html(stormHP);
+                $('.yourDefender .ackbarHP').html(ackbarHP);
+                if (stormHP > 0 && hanHP <= 0 && chewbaccaHP <= 0 && ackbarHP <= 0) {
+                    $(".youWin").css("display", "block");
+                    $(".container1").css("display", "none");
+                }
+                else if (ackbarHP <= 0 && stormHP > 0) {
+                    swAckbarEnemy.css("pointer-events", "auto");
+                    swChewbaccaEnemy.css("pointer-events", "auto");
+                    swStormTrooperEnemy.css("pointer-events", "auto");
+                    ackbarDefense = false;
+                    swAckbarDefender.css("display", "none");
+                }
+                else if (stormHP <= 0) {
+                    $(".container1").css("display", "none");
+                    $(".gameOver").css("display", "block");
+                }
+                
+           }
+
+           else if (stormTrooperCharacter === true && chewbaccaDefense === true) {
+                result = attackDamage + 15;
+                attackDamage = result;
+                counterAttackDamage = 20;
+                swAttack.text("Your attack yields " + attackDamage + " damage!")
+                swCounterAttack.text("You have been hit with a counter attack for " + counterAttackDamage + " damage!")
+                newStormHP = stormHP - counterAttackDamage;
+                stormHP = newStormHP;
+                newChewbaccaHP = chewbaccaHP - attackDamage;
+                chewbaccaHP = newChewbaccaHP;
+                $('.swCharacter .stormHP').html(stormHP);
+                $('.yourDefender .chewbaccaHP').html(chewbaccaHP);
+                
+                if (stormHP > 0 && hanHP <= 0 && chewbaccaHP <= 0 && ackbarHP <= 0) {
+                    $(".youWin").css("display", "block");
+                    $(".container1").css("display", "none");
+                }                
+                else if (chewbaccaHP <= 0 && stormHP > 0) {
+                    swAckbarEnemy.css("pointer-events", "auto");
+                    swChewbaccaEnemy.css("pointer-events", "auto");
+                    swStormTrooperEnemy.css("pointer-events", "auto");
+                    chewbaccaDefense = false;
+                    swChewbaccaDefender.css("display", "none");
+                }
+                else if (stormHP <= 0) {
+                    $(".container1").css("display", "none");
+                    $(".gameOver").css("display", "block");
+                }
+                if (stormHP > 0 && hanHP <= 0 && chewbaccaHP <= 0 && ackbarHP <= 0) {
+                    $(".youWin").css("display", "block");
+                    $(".container1").css("display", "none");
+                }
+           }
+
+           else if (stormTrooperCharacter === true && hanSoloDefense === true) {
+                result = attackDamage + 15;
+                attackDamage = result;
+                counterAttackDamage = 10;
+                swAttack.text("Your attack yields " + attackDamage + " damage!")
+                swCounterAttack.text("You have been hit with a counter attack for " + counterAttackDamage + " damage!")
+                newStormHP = stormHP - counterAttackDamage;
+                stormHP = newStormHP;
+                newHanHP = hanHP - attackDamage;
+                hanHP = newHanHP;
+                console.log(stormHP);
+                console.log(hanHP)
+                $('.swCharacter .stormHP').html(stormHP);
+                $('.yourDefender .hanHP').html(hanHP);
+                
+                if (stormHP > 0 && hanHP <= 0 && chewbaccaHP <= 0 && ackbarHP <= 0) {
+                    $(".youWin").css("display", "block");
+                    $(".container1").css("display", "none");
+                }
+                else if (hanHP <= 0 && stormHP > 0) {
+                    swAckbarEnemy.css("pointer-events", "auto");
+                    swHanSoloEnemy.css("pointer-events", "auto");
+                    swStormTrooperEnemy.css("pointer-events", "auto");
+                    hanSoloDefense = false;
+                    swHanSoloDefender.css("display", "none");
+                }
+                else if (stormHP <= 0) {
+                    $(".container1").css("display", "none");
+                    $(".gameOver").css("display", "block");
+                }
+           }
+
+           else if (ackbarCharacter === true && hanSoloDefense === true) {
+                result = attackDamage + 5;
+                attackDamage = result;
+                counterAttackDamage = 15;
+                swAttack.text("Your attack yields " + attackDamage + " damage!")
+                swCounterAttack.text("You have been hit with a counter attack for " + counterAttackDamage + " damage!")
+                newAckbarHP = ackbarHP - counterAttackDamage;
+                ackbarHP = newAckbarHP;
+                newhanHP = hanHP - attackDamage;
+                hanHP = newHanHP;
+                $('.swCharacter .ackbarHP').html(ackbarHP);
+                $('.yourDefender .hanHP').html(hanHP);
+                
+                if (ackbarHP > 0 && hanHP <= 0 && chewbaccaHP <= 0 && stormHP <= 0) {
+                    $(".youWin").css("display", "block");
+                    $(".container1").css("display", "none");
+                }
+                else if (hanHP <= 0 && ackbarHP > 0) {
+                    swAckbarEnemy.css("pointer-events", "auto");
+                    swHanSoloEnemy.css("pointer-events", "auto");
+                    swStormTrooperEnemy.css("pointer-events", "auto");
+                    hanSoloDefense = false;
+                    swHanSoloDefender.css("display", "none");
+                }
+                else if (ackbarHP <= 0) {
+                    $(".container1").css("display", "none");
+                    $(".gameOver").css("display", "block");
+                }
+           }
+
+           else if (ackbarCharacter === true && chewbaccaDefense === true) {
+                result = attackDamage + 5;
+                attackDamage = result;
+                counterAttackDamage = 25;
+                swAttack.text("Your attack yields " + attackDamage + " damage!")
+                swCounterAttack.text("You have been hit with a counter attack for " + counterAttackDamage + " damage!")
+                newAckbarHP = ackbarHP - counterAttackDamage;
+                ackbarHP = newAckbarHP;
+                newChewbaccaHP = chewbaccaHP - attackDamage;
+                chewbaccaHP = newChewbaccaHP;
+                $('.swCharacter .ackbarHP').html(ackbarHP);
+                $('.yourDefender .chewbaccaHP').html(chewbaccaHP);
+                
+                if (ackbarHP > 0 && hanHP <= 0 && chewbaccaHP <= 0 && stormHP <= 0) {
+                    $(".youWin").css("display", "block");
+                    $(".container1").css("display", "none");
+                }
+                else if (chewbaccaHP <= 0 && ackbarHP > 0) {
+                    swAckbarEnemy.css("pointer-events", "auto");
+                    swChewbaccaEnemy.css("pointer-events", "auto");
+                    swStormTrooperEnemy.css("pointer-events", "auto");
+                    chewbaccaDefense = false;
+                    swChewbaccaDefender.css("display", "none");
+                }
+                else if (ackbarHP <= 0) {
+                    $(".container1").css("display", "none");
+                    $(".gameOver").css("display", "block");
+                }
+           }
+
+           else if (ackbarCharacter === true && stormTrooperDefense === true) {
+                result = attackDamage + 5;
+                attackDamage = result;
+                counterAttackDamage = 50;
+                swAttack.text("Your attack yields " + attackDamage + " damage!")
+                swCounterAttack.text("You have been hit with a counter attack for " + counterAttackDamage + " damage!")
+                newAckbarHP = ackbarHP - counterAttackDamage;
+                ackbarHP = newAckbarHP;
+                newStormHP = stormHP - attackDamage;
+                stormHP = newStormHP;
+                $('.swCharacter .ackbarHP').html(ackbarHP);
+                $('.yourDefender .stormHP').html(stormHP);
+                
+                if (ackbarHP > 0 && hanHP <= 0 && chewbaccaHP <= 0 && stormHP <= 0) {
+                    $(".youWin").css("display", "block");
+                    $(".container1").css("display", "none");
+                }
+                else if (stormHP <= 0 && ackbarHP > 0) {
+                    swAckbarEnemy.css("pointer-events", "auto");
+                    swChewbaccaEnemy.css("pointer-events", "auto");
+                    swStormTrooperEnemy.css("pointer-events", "auto");
+                    stormTrooperDefense = false;
+                    swStormTrooperDefender.css("display", "none");
+                }
+                else if (ackbarHP <= 0) {
+                    $(".container1").css("display", "none");
+                    $(".gameOver").css("display", "block");
+                }
+           }
         })
+
+
+        
+
+
+        // $("#swChewbacca").on("click", function(){
+        //     swChewbacca.appendTo("#swCharacter");
+        //     swHanSolo.appendTo("#swEnemy1");
+        //     swAckbar.appendTo("#swEnemy2");
+        //     swStormTrooper.appendTo("#swEnemy3");
+        // })
+
+        // $("#swHanSolo").on("click", function() {
+        //     swHanSolo.appendTo("#swCharacter");
+        //     swChewbacca.appendTo("#swEnemy1");
+        //     swAckbar.appendTo("#swEnemy2");
+        //     swStormTrooper.appendTo("#swEnemy3");
+        // })
+        // $("#swAckbar").on("click", function() {
+        //     swAckbar.appendTo("#swCharacter");
+        //     swHanSolo.appendTo("#swEnemy1");
+        //     swChewbacca.appendTo("#swEnemy2");
+        //     swStormTrooper.appendTo("#swEnemy3");
+        // })
+        // $("#swStormTrooper").on("click", function() {
+        //     swStormTrooper.appendTo("#swCharacter");
+        //     swHanSolo.appendTo("#swEnemy1");
+        //     swAckbar.appendTo("#swEnemy2");
+        //     swChewbacca.appendTo("#swEnemy3");
+        // })
+
+        // $(".yourEnemies").on("click", ".swEnemy", function(){
+        //     $(this).appendTo(".yourDefender");
+        // } )
+        
+        // var swChewbaccaCharacter = $("#swChewbaccaCharacter");
+        // var swHanSoloCharacter = $("#swHanSoloCharacter");
+        // var swStormTrooperCharacter = $("#swStormTrooperCharacter");
+        // var swAckbarCharacter = $("#swAckbarCharacter");
+        // var swHansoloEnemy = $("#swHanSoloEnemy");
+        // var swAckbarEnemy = $("#swAckbarEnemy");
+        // var swStormTrooperEnemy = $("#swStormTrooperEnemy");
+        // var swChewbaccaEnemy = $("#swChewbaccaEnemy");
+        // //Choose an enemy to battle
+        
+        // $("#swHanSoloEnemy").on("click", function(){
+        //     swHansoloEnemy.appendTo("#swDefender");
+        // })
+        // $("#swChewbaccaEnemy").on("click", function(){
+        //     swChewbaccaEnemy.appendTo("#swDefender");
+        // })
+        // $("#swStormTrooperEnemy").on("click", function(){
+        //     swStormTrooperEnemy.appendTo("#swDefender");
+        // })
+        // $("#swAckbarEnemy").on("click", function(){
+        //     swAckbarEnemy.appendTo("#swDefender");
+        // })
+
 
     })
     

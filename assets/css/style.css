@@ -4,14 +4,17 @@ body {
 }
 
 .swCard {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 5px 10px 5px;
     padding-top: 10px;
     padding-bottom: 10px;
+    background-color: black;
+
 }
 
 .swTitle, .swWords, .swCard {
     font-family: 'Poller One', cursive;
+    color: yellow;
+    text-shadow: -1px -1px black, -1px -1px black, -1px -1px black, -1px -1px black;
 }
 
 .swTitle {
