@@ -484,14 +484,14 @@
            }
 
            else if (ackbarCharacter === true && hanSoloDefense === true) {
-                result = attackDamage + 5;
+                result = attackDamage + 10;
                 attackDamage = result;
-                counterAttackDamage = 15;
+                counterAttackDamage = 10;
                 swAttack.text("Your attack yields " + attackDamage + " damage!")
                 swCounterAttack.text("You have been hit with a counter attack for " + counterAttackDamage + " damage!")
                 newAckbarHP = ackbarHP - counterAttackDamage;
                 ackbarHP = newAckbarHP;
-                newhanHP = hanHP - attackDamage;
+                newHanHP = hanHP - attackDamage;
                 hanHP = newHanHP;
                 $('.swCharacter .ackbarHP').html(ackbarHP);
                 $('.yourDefender .hanHP').html(hanHP);
@@ -501,7 +501,7 @@
                     $(".container1").css("display", "none");
                 }
                 else if (hanHP <= 0 && ackbarHP > 0) {
-                    swAckbarEnemy.css("pointer-events", "auto");
+                    swChewbaccaEnemy.css("pointer-events", "auto");
                     swHanSoloEnemy.css("pointer-events", "auto");
                     swStormTrooperEnemy.css("pointer-events", "auto");
                     hanSoloDefense = false;
@@ -514,9 +514,9 @@
            }
 
            else if (ackbarCharacter === true && chewbaccaDefense === true) {
-                result = attackDamage + 5;
+                result = attackDamage + 10;
                 attackDamage = result;
-                counterAttackDamage = 25;
+                counterAttackDamage = 20;
                 swAttack.text("Your attack yields " + attackDamage + " damage!")
                 swCounterAttack.text("You have been hit with a counter attack for " + counterAttackDamage + " damage!")
                 newAckbarHP = ackbarHP - counterAttackDamage;
@@ -544,9 +544,9 @@
            }
 
            else if (ackbarCharacter === true && stormTrooperDefense === true) {
-                result = attackDamage + 5;
+                result = attackDamage + 10;
                 attackDamage = result;
-                counterAttackDamage = 50;
+                counterAttackDamage = 25;
                 swAttack.text("Your attack yields " + attackDamage + " damage!")
                 swCounterAttack.text("You have been hit with a counter attack for " + counterAttackDamage + " damage!")
                 newAckbarHP = ackbarHP - counterAttackDamage;
@@ -561,7 +561,7 @@
                     $(".container1").css("display", "none");
                 }
                 else if (stormHP <= 0 && ackbarHP > 0) {
-                    swAckbarEnemy.css("pointer-events", "auto");
+                    swHanSoloEnemy.css("pointer-events", "auto");
                     swChewbaccaEnemy.css("pointer-events", "auto");
                     swStormTrooperEnemy.css("pointer-events", "auto");
                     stormTrooperDefense = false;
